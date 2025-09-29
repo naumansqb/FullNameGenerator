@@ -24,19 +24,18 @@ public class FullNameApplication {
             System.out.println("Did not enter a first or last name.");
             return;
         }
-
+        String fullname= firstName;
         String shortenedMiddle = "";
         if (!middleName.isEmpty()) {
             shortenedMiddle = middleName.charAt(0) + ".";
+            fullname+=" "+shortenedMiddle;
         }
-
-        String finalName;
         if (suffix.isEmpty()) {
-            finalName = firstName + " " + shortenedMiddle + " " + lastName;
+            fullname += " " +lastName;
         } else {
-            finalName = firstName + " " + shortenedMiddle+" " + lastName + ", " + suffix;
+            fullname += " "+lastName + ", " + suffix;
         }
 
-        System.out.println("Full name: " + finalName);
+        System.out.println("Full name: " + fullname);
     }
 }
